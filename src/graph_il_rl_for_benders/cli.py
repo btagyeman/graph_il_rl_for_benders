@@ -17,7 +17,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     run_parser = subparsers.add_parser("run", help="Run a named workflow script.")
     run_parser.add_argument("--workflow", required=True, help="Workflow name from `graph-bd list`.")
-    run_parser.add_argument("--dry-run", action="store_true", help="Print command without executing.")
+    run_parser.add_argument(
+        "--dry-run", action="store_true", help="Print command without executing."
+    )
     run_parser.add_argument(
         "script_args",
         nargs=argparse.REMAINDER,
@@ -29,7 +31,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="Generate Case Study 2 graph data for a specific year.",
     )
     cs2_data_parser.add_argument("--year", type=int, required=True)
-    cs2_data_parser.add_argument("--dry-run", action="store_true", help="Print command without executing.")
+    cs2_data_parser.add_argument(
+        "--dry-run", action="store_true", help="Print command without executing."
+    )
     cs2_data_parser.add_argument(
         "script_args",
         nargs=argparse.REMAINDER,

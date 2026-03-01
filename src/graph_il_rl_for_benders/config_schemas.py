@@ -76,7 +76,9 @@ def validate_config_payload(payload: dict[str, Any], schema: Schema, schema_name
 
         if checker is not None and not checker(value):
             expected = _type_name(checker)
-            raise ValueError(f"{schema_name}: key '{key}' has invalid type/value (expected {expected})")
+            raise ValueError(
+                f"{schema_name}: key '{key}' has invalid type/value (expected {expected})"
+            )
 
         if min_value is not None and _is_float_like(value) and value < min_value:
             raise ValueError(f"{schema_name}: key '{key}' must be >= {min_value}")

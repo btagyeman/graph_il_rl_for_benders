@@ -30,4 +30,6 @@ def test_case_study_2_year_script_exists() -> None:
 def test_legacy_workflow_aliases_resolve() -> None:
     assert get_workflow("cs1_comparative_study").name == "cs1_evaluate_comparative"
     assert get_workflow("cs2_prepare_evaluation_data").name == "cs2_generate_evaluation_data"
-    assert get_workflow("cs2_comparative_generate_graph_data").name == "cs2_generate_evaluation_data"
+    assert (
+        get_workflow("cs2_comparative_generate_graph_data").name == "cs2_generate_evaluation_data"
+    )

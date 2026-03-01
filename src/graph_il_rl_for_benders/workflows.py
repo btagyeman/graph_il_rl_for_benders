@@ -101,7 +101,9 @@ def get_workflow(name: str) -> Workflow:
     resolved_name = WORKFLOW_ALIASES.get(name, name)
     if resolved_name not in WORKFLOWS:
         available = ", ".join(sorted(WORKFLOWS))
-        aliases = ", ".join(f"{legacy}->{canonical}" for legacy, canonical in sorted(WORKFLOW_ALIASES.items()))
+        aliases = ", ".join(
+            f"{legacy}->{canonical}" for legacy, canonical in sorted(WORKFLOW_ALIASES.items())
+        )
         raise KeyError(
             f"Unknown workflow '{name}'. Available workflows: {available}. "
             f"Legacy aliases: {aliases}"
@@ -111,14 +113,18 @@ def get_workflow(name: str) -> Workflow:
 
 def get_case_study_2_yearly_script(year: int) -> Path:
     if year not in SUPPORTED_CASE_STUDY_2_YEARS:
-        raise ValueError(f"Year {year} is not supported. Expected one of {SUPPORTED_CASE_STUDY_2_YEARS}.")
+        raise ValueError(
+            f"Year {year} is not supported. Expected one of {SUPPORTED_CASE_STUDY_2_YEARS}."
+        )
     return _prefer_path(
         f"case_study_2/pipelines/il_data_generation/{year}/generate_graph_data.py",
         f"case_study_2/data_generation_il_stage/{year}/generate_graph_data.py",
     )
 
 
-def _run_script(script_path: Path, extra_args: Optional[Sequence[str]] = None, dry_run: bool = False) -> int:
+def _run_script(
+    script_path: Path, extra_args: Optional[Sequence[str]] = None, dry_run: bool = False
+) -> int:
     if not script_path.exists():
         raise FileNotFoundError(f"Script not found: {script_path}")
 
@@ -145,7 +151,9 @@ def _run_script(script_path: Path, extra_args: Optional[Sequence[str]] = None, d
     return completed.returncode
 
 
-def run_workflow(name: str, extra_args: Optional[Sequence[str]] = None, dry_run: bool = False) -> int:
+def run_workflow(
+    name: str, extra_args: Optional[Sequence[str]] = None, dry_run: bool = False
+) -> int:
     workflow = get_workflow(name)
     return _run_script(workflow.script, extra_args=extra_args, dry_run=dry_run)
 
