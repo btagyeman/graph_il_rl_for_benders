@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from pathlib import Path
-from typing import Optional, Sequence
 import os
 import subprocess
 import sys
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional, Sequence
 
 from .paths import resolve_repo_path
 

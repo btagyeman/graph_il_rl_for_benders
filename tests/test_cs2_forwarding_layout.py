@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 CS2_DG_ROOT = ROOT / "case_study_2" / "data_generation_il_stage"
 YEARS = list(range(2009, 2024))

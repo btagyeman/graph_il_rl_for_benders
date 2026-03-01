@@ -10,7 +10,6 @@ from graph_il_rl_for_benders.config_schemas import (
     validate_cs2_train_rl_config,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 
