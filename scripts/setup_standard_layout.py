@@ -9,15 +9,16 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 def ensure_symlink(link_path: Path, target_path: Path) -> None:
     link_path.parent.mkdir(parents=True, exist_ok=True)
+    resolved_target = target_path.resolve()
+    if not resolved_target.exists():
+        raise FileNotFoundError(f"Target does not exist: {resolved_target}")
+
     if link_path.is_symlink() or link_path.exists():
-        if link_path.is_symlink() and link_path.resolve() == target_path.resolve():
+        if link_path.is_symlink() and link_path.resolve() == resolved_target:
             return
         if link_path.is_dir() and not link_path.is_symlink():
             raise RuntimeError(f"Refusing to overwrite directory: {link_path}")
         link_path.unlink()
-    resolved_target = target_path.resolve()
-    if not resolved_target.exists():
-        raise FileNotFoundError(f"Target does not exist: {resolved_target}")
     relative_link_target = Path(os.path.relpath(resolved_target, start=link_path.parent))
     link_path.symlink_to(relative_link_target)
 
