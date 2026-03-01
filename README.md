@@ -24,7 +24,6 @@ The framework combines:
 |-- artifacts/                       # Standardized model/agent entrypoints
 |-- case_study_1/                    # Case study 1 (MINLP)
 |-- case_study_2/                    # Case study 2 (irrigation scheduling)
-|-- manuscript.pdf                   # Paper manuscript
 |-- pyproject.toml                   # Packaging + tooling config
 `-- README.md
 ```
