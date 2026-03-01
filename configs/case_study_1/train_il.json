@@ -1,0 +1,11 @@
+{
+  "dataset_path": "./datasets/graph_gbd_dataset_3k_improved.pkl",
+  "output_dir": "saved_models",
+  "batch_size": 128,
+  "epochs": 100,
+  "train_split": 0.95,
+  "threshold_high": 0.95,
+  "threshold_low": 0.05,
+  "seed": 42,
+  "no_plots": false
+}

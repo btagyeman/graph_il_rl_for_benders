@@ -113,11 +113,11 @@ class GBDENV:
 
         # Load the agent weights based on the agent_type
         if agent_type == 'rl_il_init':
-            agent.load_weights("./gbd_agents/best_agent_proposed/variables/variables")
+            agent.load_weights("./gbd_agents/best_agent_proposed/variables/variables").expect_partial()
         elif agent_type == 'rl_random_init':
-            agent.load_weights("./gbd_agents/best_agent_rand_actor/variables/variables")
+            agent.load_weights("./gbd_agents/best_agent_rand_actor/variables/variables").expect_partial()
         else:
-            agent.load_weights("./gbd_agents/best_agent_il/variables/variables")
+            agent.load_weights("./gbd_agents/best_agent_il/variables/variables").expect_partial()
 
 
         self.epsilon = epsilon

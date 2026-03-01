@@ -1,0 +1,10 @@
+{
+  "parameter_file": "./parameter_verification/generated_parameters.txt",
+  "output_dir": "./results",
+  "episodes": null,
+  "batch_size": 32,
+  "max_steps_per_episode": 1000,
+  "save_every": 500,
+  "seed": 42,
+  "no_live_plot": false
+}

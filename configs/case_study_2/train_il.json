@@ -1,0 +1,12 @@
+{
+  "dataset_dir": "./gbd_datasets",
+  "output_dir": "./results",
+  "years": "all",
+  "batch_size": 128,
+  "epochs": 100,
+  "train_split": 0.85,
+  "threshold_high": 0.8,
+  "threshold_low": 0.2,
+  "seed": 42,
+  "no_plots": false
+}

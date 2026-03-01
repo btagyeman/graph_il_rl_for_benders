@@ -45,7 +45,7 @@ class GraphListDataset(Dataset):
         return self.graph_list
     
 agent = ActorNetwork()
-agent.load_weights('./trained_agent/variables/variables')
+agent.load_weights('./trained_agent/variables/variables').expect_partial()
 
 class GBD_MIMPC:    
     def __init__(self,currentStates,previousInputs,guessesX,guessesU,guessesC,cropCoeff,refEvap,rooting_depths,lai_factors,rain,ubd,lbd):      

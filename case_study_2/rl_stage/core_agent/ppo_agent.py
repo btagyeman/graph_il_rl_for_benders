@@ -74,7 +74,7 @@ class PPOAgent:
         self.clip_ratio = clip_ratio
         self.actor = ActorNetwork()
         self.critic = CriticNetwork()
-        self.actor.load_weights("il_agent/variables/variables")  # Initialize the actor with the pre-trained weights
+        self.actor.load_weights("il_agent/variables/variables").expect_partial()  # Initialize actor from IL checkpoint
         self.optimizer = keras.optimizers.Adam(learning_rate=5e-5)
 
     def choose_action(self, state):

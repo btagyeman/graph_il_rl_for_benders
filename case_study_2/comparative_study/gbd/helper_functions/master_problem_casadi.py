@@ -1,7 +1,7 @@
 import casadi as cs
 import numpy as np 
 from pyomo.environ import *
-from helper_functions.minimize_lagragrian import optimize_lagrangian
+from helper_functions.minimize_lagrangian import optimize_lagrangian
 
 def master_problem_casadi_sub_opt(self):
     w = []

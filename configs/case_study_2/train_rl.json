@@ -1,0 +1,12 @@
+{
+  "common_dir": "./common",
+  "model_weights_dir": "./trained_lstm_models/model_weights",
+  "output_dir": "./results",
+  "episodes": 5000,
+  "batch_size": 32,
+  "max_steps_per_episode": 50,
+  "epsilon": 0.01,
+  "save_every": 100,
+  "seed": 42,
+  "no_live_plot": false
+}

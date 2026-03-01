@@ -88,7 +88,7 @@ class PPOAgent:
         self.clip_ratio = clip_ratio
         self.actor = ActorNetwork()
         self.critic = CriticNetwork()
-        self.actor.load_weights("il_agent/variables/variables") 
+        self.actor.load_weights("il_agent/variables/variables").expect_partial()
         # self.actor.load_weights("imitation_learning_agent/mh_il_agent_model_norm/variables/variables") # normalized
         # self.optimizer = keras.optimizers.Adam(learning_rate=1e-20)
         self.optimizer = keras.optimizers.Adam(learning_rate=5e-5)
